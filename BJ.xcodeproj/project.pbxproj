@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCA8DD702BC1AB5100B048FE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CCA8DD6F2BC1AB5100B048FE /* main.c */; };
 		CCF2C1082BB5691200A9B41C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF2C1072BB5691200A9B41C /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CCA8DD6F2BC1AB5100B048FE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CCF2C0FB2BB568A100A9B41C /* BJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF2C1072BB5691200A9B41C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF2C1072BB5691200A9B41C /* main.swift */,
+				CCA8DD6F2BC1AB5100B048FE /* main.c */,
 			);
 			path = BJ;
 			sourceTree = "<group>";
@@ -94,6 +97,7 @@
 				TargetAttributes = {
 					CCF2C0FA2BB568A100A9B41C = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 				};
 			};
@@ -120,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA8DD702BC1AB5100B048FE /* main.c in Sources */,
 				CCF2C1082BB5691200A9B41C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +253,12 @@
 		CCF2C1032BB568A100A9B41C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF4KWKPT2Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -259,6 +266,7 @@
 		CCF2C1042BB568A100A9B41C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF4KWKPT2Q;
 				ENABLE_HARDENED_RUNTIME = YES;
