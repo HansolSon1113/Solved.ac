@@ -34,15 +34,6 @@ if let input = input{
 }
 */
 
-//엄청난 부자2(Python3)
-/*
-num = input().split(" ")
-n = 10**1000
-m = int(num[1])
-
-print("%d\n%d" %(n//m, n%m))
-*/
-
 //두 수 비교
 /*
 import Foundation
@@ -99,6 +90,7 @@ if var input = input{
  */
 
 //주사위 세개
+/*
 import Foundation
 
 let input = readLine()
@@ -124,3 +116,119 @@ if let input = input{
     }
     
 }
+*/
+
+//2420
+/*
+import Foundation
+let input = readLine()
+
+if let input = input{
+    let array = input.components(separatedBy: " ")
+    let N:Int = Int(array[0])!
+    let M:Int = Int(array[1])!
+    
+    print(abs(N-M))
+    
+}
+*/
+
+//2438
+/*
+import Foundation
+
+let input = readLine()
+
+if let input = input{
+    let cnt:Int = Int(input.components(separatedBy: "")[0])!
+    
+    var string:String = "*"
+    
+    for i in 0..<cnt{
+        print(string)
+        string+="*"
+    }
+    
+}
+*/
+
+//2558
+/*
+import Foundation
+
+let input1 = readLine()
+let input2 = readLine()
+
+var num1 = 0, num2 = 0
+
+if let input1 = input1{
+    num1 = Int(input1.components(separatedBy: "")[0])!
+}
+
+if let input2 = input2{
+    num2 = Int(input2.components(separatedBy: "")[0])!
+}
+
+print(num1 + num2)
+*/
+
+//2743
+/*
+import Foundation
+
+let input = readLine()
+
+if let input = input{
+    let string:String = input.components(separatedBy: "")[0]
+    
+    print(string.count)
+}
+*/
+
+//2744
+/*
+import Foundation
+
+let input = readLine()
+
+if let input = input{
+    let string = Array(input.components(separatedBy: "")[0])
+    var printString: String = ""
+    
+    for i in 0..<string.count{
+        if(string[i].isUppercase){
+            printString.append(string[i].lowercased())
+        }
+        else{
+            printString.append(string[i].uppercased())
+        }
+    }
+    
+    print(printString)
+}
+*/
+
+//4999
+/*
+import Foundation
+
+let input1 = readLine()
+let input2 = readLine()
+
+var jaeAah = "", docAah = ""
+
+if let input1 = input1{
+    jaeAah = input1.components(separatedBy: "")[0]
+}
+
+if let input2 = input2{
+    docAah = input2.components(separatedBy: "")[0]
+}
+
+if(jaeAah.count >= docAah.count){
+    print("go")
+}
+else{
+    print("no")
+}
+*/
