@@ -233,3 +233,117 @@ int main(){
     return 0;
 }
 */
+
+//2530
+/*
+#include <stdio.h>
+
+int main(void){
+    int hour, min, sec;
+    unsigned long int cookTime; //초 단위
+    
+    scanf("%d %d %d", &hour, &min, &sec);
+    scanf("%ld", &cookTime);
+    
+    hour+=cookTime/60/60%24;
+    min+=cookTime/60%60;
+    sec+=cookTime%60;
+  
+    if(sec>=60){
+        sec%=60;
+        min+=1;
+    }
+    if(min>=60){
+        min-=60;
+        hour+=1;
+    }
+    if(hour>=24){
+        hour-=24;
+    }
+    
+    printf("%d %d %d\n", hour, min, sec);
+    
+    return 0;
+}
+*/
+
+//2742
+/*
+#include <stdio.h>
+
+int main(void){
+    unsigned long int num;
+    scanf("%ld", &num);
+    
+    for(unsigned long int i = num; i > 0; i--){
+        printf("%ld\n", i);
+    }
+    
+    return 0;
+}
+*/
+
+//2752
+/*
+#include <stdio.h>
+
+int main(void){
+    unsigned long int num1, num2, num3, tmp;
+    
+    scanf("%ld %ld %ld", &num1, &num2, &num3);
+    
+    if(num3 < num1){
+        tmp = num1;
+        num1 = num3;
+        num3 = tmp;
+    }
+    if(num2 < num1){
+        tmp = num2;
+        num2 = num1;
+        num1 = tmp;
+    }
+    if(num3 < num2){
+        tmp = num2;
+        num2 = num3;
+        num3 = tmp;
+    }
+    
+    printf("%ld %ld %ld\n", num1, num2, num3);
+    
+    return 0;
+}
+*/
+
+//2845
+/*
+#include <stdio.h>
+
+int main(void){
+    unsigned long int den1, den2, den3, den4, den5, den;
+    int personPerMeter, area;
+    
+    scanf("%d %d", &personPerMeter, &area);
+    scanf("%ld %ld %ld %ld %ld", &den1, &den2, &den3, &den4, &den5);
+    
+    den = personPerMeter * area;
+    
+    printf("%ld %ld %ld %ld %ld\n", den1-den, den2-den, den3-den, den4-den, den5-den);
+    
+    return 0;
+}
+*/
+
+//3046
+/*
+#include <stdio.h>
+
+int main(void){
+    int R1, S;
+    
+    scanf("%d %d", &R1, &S);
+    
+    printf("%d\n", S*2-R1);
+    
+    return 0;
+}
+*/
