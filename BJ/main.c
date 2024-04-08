@@ -347,3 +347,37 @@ int main(void){
     return 0;
 }
 */
+
+//4299
+/*
+#include <stdio.h>
+
+int main(void){
+    int sum, dif, team1, team2;
+    
+    scanf("%d %d", &sum, &dif);
+    if((((sum%2==1 && dif%2==0) || (sum%2==0 && dif%2 == 1)) && (sum!=1 && dif!=0)) || sum<dif){
+        printf("-1");
+    }
+    else{
+        if(sum>=dif){
+            if(sum != 1 && dif != 0){
+                team1 = (sum-dif)/2;
+                team2 = (sum+dif)/2;
+                if(team1>team2){
+                    printf("%d %d", team1, team2);
+                }
+                else if(team1<team2){
+                    printf("%d %d", team2, team1);
+                }
+            }
+            else{
+                printf("%d %d", sum, dif);
+            }
+        }
+    }
+    
+    printf("\n");
+    return 0;
+}
+*/
