@@ -381,3 +381,84 @@ int main(void){
     return 0;
 }
 */
+
+//4562
+/*
+#include <stdio.h>
+
+int main(void){
+    int n, X, Y;
+    scanf("%d", &n);
+    
+    for(int i = 0; i < n; i++){
+        scanf("%d %d", &X, &Y);
+        if(X<Y){
+            printf("NO BRAINS\n");
+        }
+        else{
+            printf("MMM BRAINS\n");
+        }
+    }
+}
+*/
+
+//4598
+/*
+#include <stdio.h>
+
+int main(void){
+    int N, X, Y, Z;
+    scanf("%d", &N);
+    printf("Gnomes:\n");
+    
+    for(int i = 0; i < N; i++){
+        scanf("%d %d %d", &X, &Y, &Z);
+        if((X < Y && Y < Z) || (X > Y && Y > Z)){
+            printf("Ordered\n");
+        }
+        else{
+            printf("Unordered\n");
+        }
+    }
+    return 0;
+}
+*/
+
+//4714
+/*
+ #include <stdio.h>
+ 
+ int main(void){
+ double weight;
+ while(1){
+ scanf("%lf", &weight);
+ if(weight < 0){
+ break;
+ }
+ printf("Objects weighing %.2lf on Earth will weigh %.2lf on the moon.\n", weight, weight*0.167);
+ }
+ 
+ return 0;
+ }
+ */
+
+//5300
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int i = 1; i <= cnt; i++){
+        printf("%d ", i);
+        if(i % 6 == 0 && i != cnt){
+            printf("Go! ");
+        }
+    }
+    
+    printf("Go!\n");
+    
+    return 0;
+}
+*/

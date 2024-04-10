@@ -232,3 +232,25 @@ else{
     print("no")
 }
 */
+
+//4470
+/*
+import Foundation
+
+let input = readLine()
+
+var cnt: Int = 0
+var string: String = ""
+
+if let input = input{
+    cnt = Int(input.components(separatedBy: "")[0])!
+}
+
+for i in 0..<cnt{
+    let stringInput = readLine()
+    if let stringInput = stringInput{
+        string = stringInput.components(separatedBy: "")[0]
+    }
+    print("\(i+1). \(string)")
+}
+*/
