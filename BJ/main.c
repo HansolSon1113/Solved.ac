@@ -462,3 +462,223 @@ int main(void){
     return 0;
 }
 */
+
+//1085
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+    int x, y, w, h, xdif, ydif, dif;
+    scanf("%d %d %d %d", &x, &y, &w, &h);
+    
+    w = (x<=w-x)?0:w;
+    h = (y<=h-y)?0:h;
+    
+    xdif = abs(w - x);
+    ydif = abs(h - y);
+    
+    dif = (xdif<ydif)?xdif:ydif;
+    
+    printf("%d\n", dif);
+    
+    return 0;
+}
+*/
+
+//1267
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#define YS_TIME 30
+#define YS_F 10
+#define MS_TIME 60
+#define MS_F 15
+
+int main(void){
+    int N, t, YS_Fee = 0, MS_Fee = 0, fee;
+    scanf("%d", &N);
+    
+    for(int i = 0; i < N; i++){
+        scanf("%d", &t);
+        YS_Fee += (t/YS_TIME + 1) * YS_F;
+        MS_Fee += (t/MS_TIME + 1) * MS_F;
+    }
+    
+    if(YS_Fee <= MS_Fee){
+        printf("Y ");
+        fee = YS_Fee;
+    }
+    if(MS_Fee <= YS_Fee){
+        printf("M ");
+        fee = MS_Fee;
+    }
+    
+    printf("%d\n", fee);
+    return 0;
+}
+*/
+//1547
+/*
+#include <stdio.h>
+
+int main(void){
+    int ballCup = 1, cnt, ch1, ch2;
+    
+    scanf("%d", &cnt);
+    
+    for(int i = 0; i < cnt; i++){
+        scanf("%d %d", &ch1, &ch2);
+        if(ch1 == ballCup){
+            ballCup = ch2;
+        }
+        else if(ch2 == ballCup){
+            ballCup = ch1;
+        }
+    }
+    printf("%d\n", ballCup);
+    
+    return 0;
+}
+*/
+
+//2441
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt; x++){
+        for(int z = 1; z <= x; z++){
+            printf(" ");
+        }
+        for(int y = cnt; y > x; y--){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+//2442
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt; x++){
+        for(int z = 1; z < cnt - x; z++){
+            printf(" ");
+        }
+        for(int y = 0; y <= x; y++){
+            printf("*");
+        }
+        for(int a = 0; a < x; a++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+//2443
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt; x++){
+        for(int z = 0; z < x; z++){
+            printf(" ");
+        }
+        for(int y = cnt; y > x; y--){
+            printf("*");
+        }
+        for(int a = cnt; a > x + 1; a--){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+//2444
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt; x++){
+        for(int z = 1; z < cnt - x; z++){
+            printf(" ");
+        }
+        for(int y = 0; y <= x; y++){
+            printf("*");
+        }
+        for(int a = 0; a < x; a++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    for(int x = 1; x < cnt; x++){
+        for(int z = 0; z < x; z++){
+            printf(" ");
+        }
+        for(int y = cnt; y > x; y--){
+            printf("*");
+        }
+        for(int a = cnt; a > x + 1; a--){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+//2445
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt - 1; x++){
+        for(int y = 0; y <= x; y++){
+            printf("*");
+        }
+        for(int z = x*2; z < (cnt-1)*2; z++){
+            printf(" ");
+        }
+        for(int a = 0; a <= x; a++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    for(int x = 0; x < cnt; x++){
+        for(int y = cnt; y > x; y--){
+            printf("*");
+        }
+        for(int z = 0; z < x*2; z++){
+            printf(" ");
+        }
+        for(int a = cnt; a > x; a--){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
