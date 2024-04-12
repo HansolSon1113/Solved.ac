@@ -780,3 +780,31 @@ int main(void){
     return 0;
 }
 */
+
+//1032
+/*
+#include <stdio.h>
+
+int main(void){
+    long cnt, num_, numMax = 0, numMin;
+    scanf("%ld", &cnt);
+    
+    for(int i = 0; i < cnt; i++){
+        scanf("%ld", &num_);
+        if(i == 0){
+            numMin = num_;
+        }
+        if(num_ > numMax){
+            numMax = num_;
+        }
+        if(num_ < numMin){
+            numMin = num_;
+        }
+    }
+    
+    printf("%ld\n", numMax * numMin);
+    
+    return 0;
+}
+*/
+깨달음 깔끔 꿈 까치
