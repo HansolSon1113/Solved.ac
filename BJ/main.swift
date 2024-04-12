@@ -254,3 +254,59 @@ for i in 0..<cnt{
     print("\(i+1). \(string)")
 }
 */
+
+//1076
+/*
+import Foundation
+
+let input1 = readLine()
+let input2 = readLine()
+let input3 = readLine()
+var result: Int
+
+var fstCol = ""
+var secCol = ""
+var thrCol = ""
+
+if let input1 = input1{
+    fstCol = input1.components(separatedBy: "")[0]
+}
+if let input2 = input2{
+    secCol = input2.components(separatedBy: "")[0]
+}
+if let input3 = input3{
+    thrCol = input3.components(separatedBy: "")[0]
+}
+
+func cal(color: String) -> Int{
+    switch(color){
+        case "black":
+            return 0
+        case "brown":
+            return 1
+        case "red":
+            return 2
+        case "orange":
+            return 3
+        case "yellow":
+            return 4
+        case "green":
+            return 5
+        case "blue":
+            return 6
+        case "violet":
+            return 7
+        case "grey":
+            return 8
+        case "white":
+            return 9
+        default:
+            return 0
+    }
+}
+
+result = (cal(color: fstCol)*10 + cal(color: secCol))*Int(truncating: pow(10, cal(color: thrCol))as NSNumber)
+
+print(result)
+*/
+

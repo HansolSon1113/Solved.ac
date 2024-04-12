@@ -682,3 +682,101 @@ int main(void){
     return 0;
 }
 */
+
+//1075
+/*
+#include <stdio.h>
+
+int main(void){
+    long N, F;
+    scanf("%ld %ld", &N, &F);
+    
+    N -= N % 100;
+    
+    while(1){
+        if(N % F == 0){
+            break;
+        }
+        else{
+            N += 1;
+        }
+    }
+    
+    printf("%ld%ld\n", N % 100 / 10, N % 10);
+    
+    return 0;
+}
+*/
+
+//1009
+/*
+#include <stdio.h>
+
+int main(void){
+    long T, a, b, sum;
+    
+    scanf("%ld", &T);
+   
+    for(int i = 0; i < T; i++){
+        sum = 1;
+        scanf("%ld %ld", &a, &b);
+        for(int x = 0; x < b; x++){
+            sum = (sum * a) % 10;
+        }
+        
+        if(sum == 0){
+            sum = 10;
+        }
+        
+        printf("%ld\n", sum);
+    }
+    
+    return 0;
+}
+*/
+
+//1100
+/*
+#include <stdio.h>
+
+int main(void){
+    int sum = 0;
+    char str[8];
+    
+    for(int x = 0; x < 8; x++){
+        scanf("%s", str);
+        
+        for(int y = 0; y < 8; y++){
+            if((str[y] == 'F') && ((x % 2 == 0 && y % 2 == 0) || (x % 2 == 1 && y % 2 == 1))){
+                sum+=1;
+            }
+        }
+    }
+    printf("%d", sum);
+    
+    return 0;
+}
+*/
+
+//1159
+/*
+#include <stdio.h>
+#include <math.h>
+
+int main(void){
+    double diag, wratio, hratio, cal, ratio;
+    int height, width;
+    
+    scanf("%lf %lf %lf", &diag, &wratio, &hratio);
+    
+    cal = wratio * wratio + hratio * hratio;
+    ratio = diag * diag / cal;
+    
+    width = wratio * sqrt(ratio);
+    height = hratio * sqrt(ratio);
+    
+    printf("%d %d\n", width, height);
+    
+    return 0;
+}
+*/
