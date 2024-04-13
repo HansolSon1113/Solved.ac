@@ -807,4 +807,69 @@ int main(void){
     return 0;
 }
 */
-깨달음 깔끔 꿈 까치
+
+//1094
+/*
+#include <stdio.h>
+
+int main(void){
+    int len = 64, X, num = 0;
+    scanf("%d", &X);
+    
+    int i = 0;
+    
+    num = len;
+    while(1){
+        if(len <= X){
+            break;
+        }
+        len /= 2;
+    }
+    
+    while(len){
+        if(X / len > 0){
+            X -= len;
+            i += 1;
+        }
+        len /= 2;
+    }
+    
+    printf("%d\n", i);
+    
+    return 0;
+}
+*/
+
+//8959
+/*
+#include <stdio.h>
+
+int main(void){
+    int cnt, sum, stk;
+    
+    scanf("%d", &cnt);
+    
+    for(int i = 0; i < cnt; i++){
+        char str[80];
+        for(int i = 0; i < 80; i++){
+            str[i] = 0;
+        }
+        sum = 0;
+        stk = 1;
+        scanf("%s", &str);
+        
+        for(int a = 0; a < 80; a++){
+            if(str[a] == 'O'){
+                sum += stk;
+                stk += 1;
+            }
+            else{
+                stk = 1;
+            }
+        }
+        printf("%d\n", sum);
+    }
+    
+    return 0;
+}
+*/
