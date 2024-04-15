@@ -873,3 +873,213 @@ int main(void){
     return 0;
 }
 */
+
+//1157
+/*
+#include <stdio.h>
+
+int main(void){
+    char str[1000000], result = '\0';
+    int sum = 0, found[26] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    
+    for(int i = 0; i < 1000000; i++){
+        str[i] = 0;
+    }
+    
+    scanf("%s", &str);
+    
+    for(int x = 0; x < 1000000; x++){
+        if(str[x] == 0){
+            break;
+        }
+        
+        if(str[x] >= 'a' && str[x] <= 'z'){
+            str[x] = str[x] - 32;
+        }
+        
+        found[str[x] - 65] += 1;
+    }
+    
+    for(int i = 0; i < 26; i++){
+        if(found[i] > sum){
+            sum = found[i];
+            result = i + 65;
+        }
+        else if(found[i] == sum){
+            result = '?';
+        }
+    }
+    
+    printf("%c\n", result);
+    
+    return 0;
+}
+*/
+
+//1259 팰린드롬수
+/*
+#include <stdio.h>
+
+int main(void){
+    int num, len = 0, boolean = 1, mul1 = 1, mul2 = 1, res1, res2;
+    
+    while(1){
+        scanf("%d", &num);
+        
+        if(num == 0){
+            break;
+        }
+        
+        len = 0;
+        boolean = 1;
+        mul1 = 1;
+        
+        while(num/mul1){
+            len += 1;
+            mul1 *= 10;
+        }
+        
+        for(int x = 0; x < len/2; x++){
+            mul1 = mul2 = 1;
+            for(int y = 0; y < (len - 1) - x; y++){
+                mul1 *= 10;
+            }
+            res1 = (num/mul1)%10;
+            
+            
+            for(int y = 0; y < x + 1; y++){
+                mul2 *= 10;
+            }
+            res2 = num/(mul2/10)%10;
+                
+            if(res1 != res2){
+                boolean = 0;
+            }
+        }
+        
+        switch(boolean){
+            case 1:
+                printf("yes\n");
+                break;
+            default:
+                printf("no\n");
+                break;
+        }
+    }
+    
+    return 0;
+}
+*/
+
+//1357
+/*
+#include <stdio.h>
+
+int reverse(int num){
+    int revNum = 0, mul = 1;
+    
+    revNum = num;
+    
+    while(num >= 10){
+        mul *= 10;
+        num /= 10;
+    }
+        
+    num = revNum;
+    revNum = 0;
+    
+    for(int i = 0; i < 4; i ++){
+        revNum += num%10 * mul;
+        num /= 10;
+        mul /= 10;
+    }
+
+    return revNum;
+}
+
+int main(void){
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    
+    num1 = reverse(num1);
+    num2 = reverse(num2);
+    
+    printf("%d\n", reverse(num1 + num2));
+}
+*/
+
+//1546
+/*
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    unsigned int N;
+    scanf("%u", &N);
+    
+    double score[N], M = 0.0, sum = 0.0;
+    
+    for(int i = 0; i < N; i++) {
+        scanf("%lf", &score[i]);
+        if(score[i] > M)
+            M = score[i];
+    }
+    
+    for(int i = 0; i < N; i++) {
+        score[i] = score[i] / M * 100;
+        sum += score[i];
+    }
+    
+    double average = sum / N;
+    printf("%.2f\n", round(average * 100) / 100);
+    
+    return 0;
+}
+*/
+
+//1551
+/*
+#include <stdio.h>
+
+int main(void) {
+    int len, cnt;
+    scanf("%d %d", &len, &cnt);
+    int nums[len], newNum[len];
+    
+    for(int i = 0; i < len; i++){
+        scanf("%d,", &nums[i]);
+    }
+    
+    if(cnt >= 1){
+        for(int i = 0; i < cnt; i++){
+            for(int j = 0; j < len; j++){
+                newNum[j] = nums[j+1] - nums[j];
+            }
+            
+            for(int j = 0; j < len - i; j++){
+                nums[j] = newNum[j];
+            }
+        }
+        
+        for(int i = 0; i < len - cnt; i++){
+            if(i == len - cnt - 1){
+                printf("%d\n", newNum[i]);
+                break;
+            }
+            printf("%d,", newNum[i]);
+        }
+    }
+    
+    else{
+        for(int i = 0; i < len; i++){
+            if(i == len - 1){
+                printf("%d\n", nums[i]);
+                break;
+            }
+            printf("%d,", nums[i]);
+        }
+    }
+    
+    return 0;
+}
+*/
