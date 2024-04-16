@@ -1083,3 +1083,54 @@ int main(void) {
     return 0;
 }
 */
+
+//11866
+/*
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ int* queue(int *nums, int N, int rem){
+     for(int i = 0; i < N; i++){
+         if(nums[i] == rem){
+             for(int a = i; a < N-1; a++){
+                 int tmp = nums[a];
+                 nums[a] = nums[a+1];
+                 nums[a+1] = tmp;
+             }
+             break;
+         }
+     }
+     
+     return nums;
+ }
+
+ int main(void){
+     int N, K, i = -1;
+     scanf("%d %d", &N, &K);
+     
+     int nums[N], check[N], arr[N];
+     for(int x = 0; x < N; x++){
+         arr[x] = nums[x] = check[x] = x+1;
+     }
+     
+     for(int a = 0; a < N; a++){
+         int cnt = 0;
+         while(cnt < K){
+             i = (i+1) % N;
+             if(check[i]){
+                 cnt++;
+             }
+         }
+         check[i] = 0;
+         *arr = *queue(arr, N, nums[i]);
+     }
+     
+     printf("<");
+     for(int i = 0; i < N-1; i++){
+         printf("%d, ", arr[i]);
+     }
+     printf("%d>\n", arr[N-1]);
+         
+     return 0;
+ }
+ */
