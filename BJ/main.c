@@ -1134,3 +1134,373 @@ int main(void) {
      return 0;
  }
  */
+
+//2675
+/*
+#include <stdio.h>
+
+void run(void){
+    int loopCnt;
+    char str[21];
+    for(int i = 0; i < 21; i++){
+        str[i] = '\0';
+    }
+    scanf("%d %20s", &loopCnt, str);
+    for(int y = 0; str[y] != '\0'; y++){
+        for(int z = 0; z < loopCnt; z++){
+            printf("%c", str[y]);
+        }
+    }
+    printf("\n");
+}
+
+int main(void){
+    int cnt;
+    scanf("%d", &cnt);
+    
+    for(int x = 0; x < cnt; x++){
+        run();
+    }
+    
+    return 0;
+}
+*/
+
+//팩토리얼 계산 코드
+/*
+ #include <stdio.h>
+
+ long long fac(long long sum, long long num){
+     sum *= num;
+     num--;
+     if(num >= 1){
+         sum = fac(sum, num);
+     }
+     return sum;
+ }
+
+ long long comb(long long num, long long r){
+     long long comb = fac(1, num) / (fac(1, num - r)*fac(1, r));
+     return comb;
+ }
+
+ int main(void){
+     long long num1, num2;
+     scanf("%lld %lld", &num1, &num2);
+     
+     printf("%lld", comb(num1, num2));
+     printf("\n");
+     return 0;
+ }
+
+ */
+
+//10818
+/*
+ #include <stdio.h>
+
+ int main(void){
+     int cnt, min, max;
+     scanf("%d", &cnt);
+     int num[cnt];
+     
+     for(int i = 0; i < cnt; i++){
+         scanf("%d", &num[i]);
+     }
+     
+     max = min = num[0];
+     
+     for(int i = 0; i < cnt; i++){
+         if(num[i] > max){
+             max = num[i];
+         }
+         else if(num[i] < min){
+             min = num[i];
+         }
+     }
+     
+     printf("%d %d\n", min, max);
+     
+ }
+ */
+
+//10950
+/*
+ #include <stdio.h>
+
+ int main(void){
+     int cnt, num1, num2;
+     scanf("%d", &cnt);
+     
+     for(int i = 0; i < cnt; i++){
+         scanf("%d %d", &num1, &num2);
+         printf("%d\n", num1+num2);
+     }
+     
+ }
+
+ */
+
+//10951
+/*
+ #include <stdio.h>
+
+ int main(void){
+     int num1, num2;
+     
+     while(scanf("%d %d", &num1, &num2) == 2){
+         printf("%d\n", num1+num2);
+     }
+     return 0;
+ }
+
+ */
+
+//10952
+/*
+#include <stdio.h>
+
+int main(void){
+    int num1, num2;
+    
+    while(1){
+        scanf("%d %d", &num1, &num2);
+        if(num1 == 0 && num2 == 0){
+            break;
+        }
+        printf("%d\n", num1+num2);
+    }
+    return 0;
+}
+
+*/
+
+//11654
+/*
+#include <stdio.h>
+
+int main(void){
+    char str;
+    scanf("%c", &str);
+    printf("%d", str);
+    
+    return 0;
+}
+*/
+
+//11720
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+    int cnt, sum = 0;
+    scanf("%d", &cnt);
+    char num[cnt];
+    
+    scanf("%s", num);
+    
+    for(int i = 0; i < cnt; i++){
+        sum += num[i] - '0';
+    }
+
+    printf("%d\n", sum);
+    
+    return 0;
+}
+
+*/
+
+//2577
+/*
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ int main(void){
+     int num1, num2, num3, num, cnt[10] = {0,0,0,0,0,0,0,0,0,0};
+     scanf("%d %d %d", &num1, &num2, &num3);
+     
+     num = num1 * num2 * num3;
+     
+     while(num){
+         int n = num%10;
+         cnt[n]++;
+         num/=10;
+     }
+     
+     for(int i = 0; i < 10; i++){
+         printf("%d\n", cnt[i]);
+     }
+     
+     return 0;
+ }
+
+ */
+
+//2884
+/*
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ int main(void){
+     int hour, min;
+     scanf("%d %d", &hour, &min);
+     
+     min -= 45;
+     if(min < 0){
+         min += 60;
+         hour -= 1;
+     }
+     if(hour < 0){
+         hour = 23;
+     }
+     
+     printf("%d %d\n", hour, min);
+     
+     return 0;
+ }
+
+ */
+
+//2920
+/*
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ int main(void){
+     int num[8], res, a;
+     
+     for(int i = 0; i < 8; i++){
+         scanf("%d", &num[i]);
+         if(i >= 1){
+             res = num[i] - num[i-1];
+             if(res == 1){
+                 a = 1;
+             }
+             else if(res == -1){
+                 a = -1;
+             }
+             else{
+                 a = 0;
+                 break;
+             }
+         }
+     }
+     
+     switch(a){
+         case 1:
+             printf("ascending\n");
+             break;
+         case -1:
+             printf("descending\n");
+             break;
+         default:
+             printf("mixed\n");
+             break;
+     }
+     
+     return 0;
+ }
+ */
+
+//3052
+/*
+ #include <stdio.h>
+
+ int notIn(int *num, int target){
+     for(int i = 0; i < 10; i++){
+         if(num[i] == target){
+             return 0;
+         }
+     }
+     return 1;
+ }
+
+ int main(void){
+     int num[10], res = 0, in[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+     for(int i = 0; i < 10; i++){
+         scanf("%d", &num[i]);
+         num[i] %= 42;
+     }
+     
+     for(int i = 0; i < 10; i++){
+         if(notIn(in, num[i])){
+             res++;
+             in[i] = num[i];
+         }
+     }
+     
+     printf("%d\n", res);
+     return 0;
+ }
+ */
+
+//10250
+/*
+ #include <stdio.h>
+
+ int main(void){
+     int floors, rooms, cnt, resv = 101, ccnt;
+     
+     scanf("%d", &ccnt);
+     for(int i = 0; i < ccnt; i++){
+         
+         scanf("%d %d %d", &floors, &rooms, &cnt);
+         
+         for(int x = 0; x <= rooms; x++){
+             for(int y = 0; y <= floors; y++){
+                 if(floors*x+y == cnt){
+                     resv = y*100 + x+1;
+                     goto RES;
+                 }
+             }
+         }
+         
+     RES:
+         printf("%d\n", resv);
+     }
+     
+     return 0;
+ }
+ */
+
+//1978
+/*
+ #include <stdio.h>
+
+ int calc(int* nums, int N){
+     int boolean, sum = 0;
+     
+     for(int i = 0; i < N; i++){
+         boolean = 1;
+         for(int j = 2; j < nums[i]; j++){
+             if(nums[i] % j == 0){
+                 boolean = 0;
+                 break;
+             }
+         }
+         if(boolean && nums[i] > 1){
+             sum++;
+         }
+     }
+     
+     return sum;
+ }
+
+ int main(void){
+     int N;
+     scanf("%d", &N);
+     int nums[N];
+     
+     for(int i = 0; i < N; i++){
+         scanf("%d", &nums[i]);
+     }
+     
+     printf("%d", calc(nums, N));
+     
+     
+     printf("\n");
+     return 0;
+ }
+
+ */
