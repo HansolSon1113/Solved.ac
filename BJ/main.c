@@ -1504,3 +1504,40 @@ int main(void){
  }
 
  */
+
+//2747(피보나치)
+/*
+ #include <stdio.h>
+
+ int main(void){
+     int num, oldFiv = 1, fiv = 0, tmp;
+     scanf("%d", &num);
+     for(int i = 0; i < num; i++){
+
+         tmp = fiv;
+         fiv += oldFiv;
+         oldFiv = tmp;
+     }
+     
+     printf("%d\n", fiv);
+     return 0;
+ }
+ */
+
+//2748
+/*
+ #include <stdio.h>
+
+ int main(void){
+     long long num, oldFiv = 1, fiv = 0, tmp;
+     scanf("%lld", &num);
+     for(int i = 0; i < num; i++){
+         tmp = fiv;
+         fiv += oldFiv;
+         oldFiv = tmp;
+     }
+     
+     printf("%lld\n", fiv);
+     return 0;
+ }
+ */
