@@ -1541,3 +1541,38 @@ int main(void){
      return 0;
  }
  */
+
+//1193
+/*
+ #include <stdio.h>
+
+ int main(void){
+     long long n, cnt = 0, sum = 0, a;
+     scanf("%lld", &n);
+
+     while(1){
+         cnt++;
+         if(sum + cnt < n){
+             sum += cnt;
+         }
+         else{
+             break;
+         }
+     }
+     a = n - sum;
+     
+     for(long long i = 1; i <= cnt; i++){
+         if(a <= 1){
+             if(cnt % 2 == 0){
+                 printf("%lld/%lld\n", i, cnt-i+1);
+             }
+             else{
+                 printf("%lld/%lld\n", cnt-i+1, i);
+             }
+             break;
+         }
+         a--;
+     }
+ }
+
+ */
