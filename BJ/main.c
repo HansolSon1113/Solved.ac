@@ -1576,3 +1576,151 @@ int main(void){
  }
 
  */
+
+//9009
+/*
+ #include <stdio.h>
+
+ long long fib(int index);
+ long long findFib(long long target);
+
+ int main(void){
+     int n;
+     long long target, res[92], cnt;
+     scanf("%d", &n);
+     for(int i = 0; i < n; i++){
+         cnt = 0;
+         for(int i = 0; i < 92; i++){
+             res[i] = NULL;
+         }
+         scanf("%lld", &target);
+         while(target > 0){
+             res[cnt] = findFib(target);
+             target -= res[cnt];
+             cnt++;
+         }
+         for(int i = 91; i >= 0; i--){
+             if(res[i] != NULL){
+                 printf("%lld ", res[i]);
+             }
+         }
+         printf("\n");
+     }
+ }
+
+ long long fib(int index){
+     long long fib = 0, oldFib = 1, tmp;
+     for(int i = 0; i < index; i++){
+         tmp = fib;
+         fib += oldFib;
+         oldFib = tmp;
+     }
+     return fib;
+ }
+
+ long long findFib(long long target){
+     long long result = 0;
+     for(int i = 1; i <= 92; i++){
+         if(fib(i) <= target && fib(i+1) > target){
+             result = fib(i);
+             break;
+         }
+     }
+     return result;
+ }
+
+ */
+
+//1316
+/*
+ #include <stdio.h>
+
+ int group(int n);
+
+ int main(void){
+     int n, cnt = 0;
+     scanf("%d", &n);
+     for(int i = 0; i < n; i++){
+         if(group(n)){
+             cnt++;
+         }
+     }
+     
+     printf("%d\n", cnt);
+     return 0;
+ }
+
+ int group(int n){
+     char str[101], fnd[26], last = NULL;
+     scanf("%s", &str);
+     
+     for(int i = 0; i < 26; i++){
+         fnd[i] = NULL;
+     }
+     
+     for(int i = 0; i < 100; i++){
+         if(str[i] == NULL){
+             break;
+         }
+         
+         for(int j = 0; j < 26; j++){
+             if(str[i] == fnd[j] && str[i] != last){
+                 return 0;
+             }
+         }
+         
+         fnd[str[i] - 'a'] = str[i];
+         last = str[i];
+     }
+     
+     return 1;
+ }
+
+ */
+
+//1436
+/*
+ #include <stdio.h>
+
+ long long find(int N);
+
+ int isIn(long long num);
+
+ int main(void){
+     int N;
+     scanf("%d", &N);
+     
+     printf("%lld\n", find(N));
+     return 0;
+ }
+
+ long long find(int N){
+     static int n, cnt;
+     n++;
+     if(isIn(n)){
+         cnt++;
+     }
+     if(cnt < N){
+         find(N);
+     }
+     return n;
+ }
+
+ int isIn(long long num){
+     int cnt = 0;
+     while(num > 0){
+         int cal = num % 10;
+         if(cnt <= 2 && cal != 6){
+             cnt = 0;
+         }
+         if(cal == 6){
+             cnt++;
+         }
+         num /= 10;
+     }
+     if(cnt >= 3){
+         return 1;
+     }
+     return 0;
+ }
+ */
